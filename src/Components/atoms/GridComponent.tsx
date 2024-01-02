@@ -5,7 +5,9 @@ import { RowData } from '../../Types/landing.ts';
 
 interface GridComponentProps {
   rowData: RowData[];
+  // eslint-disable-next-line no-unused-vars
   onGridReady: (event: GridReadyEvent) => void;
+  // eslint-disable-next-line no-unused-vars
   onCellValueChanged: (event: { data: RowData }) => void;
 }
 
@@ -13,7 +15,7 @@ const GridComponent: React.FC<GridComponentProps> = ({
   rowData,
   onGridReady,
   onCellValueChanged,
-}) => {
+}: GridComponentProps) => {
   const columns: ColDef[] = [
     { headerName: 'Name', field: 'name', editable: true },
     { headerName: 'Job', field: 'job', editable: true },

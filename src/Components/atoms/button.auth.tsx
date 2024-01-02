@@ -2,11 +2,16 @@ import React from 'react';
 
 interface ButtonProps {
   text: string;
+  // eslint-disable-next-line no-unused-vars
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   loading: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick, loading }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  onClick,
+  loading,
+}: ButtonProps) => {
   return (
     <button
       type="submit"

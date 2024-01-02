@@ -1,19 +1,28 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import Contact from './Pages/Contact';
-import About from './Pages/About';
-import Home from './Pages/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const App: React.FC = () => {
+import { ProtectedRoute } from './Utils';
+import LoginForm from './Pages/login/login';
+import SignupForm from './Pages/signup/signup';
+
+import { UserProvider } from './Hooks/userContext.tsx';
+import Navbar from './Pages/Navbar';
+import Dashboard from './Pages/dashboard/index';
+
+const App = () => {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signUp" element={<SignupForm />} />
+          <Route
+            path="/"
+            element={<ProtectedRoute element={<Dashboard />} />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
   );
 };
 

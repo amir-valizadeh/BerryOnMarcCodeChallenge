@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, InputField } from '../../Components/atoms';
 
@@ -76,7 +76,13 @@ const SignUpForm = () => {
             id="password"
           />
           {error && <p className="text-red-500 text-sm">{error}</p>}
-          <Button text="Sign Up" onClick={() => {}} loading={loading} />
+          <Button
+            text="Sign Up"
+            onClick={() => {
+              console.log('clicked');
+            }}
+            loading={loading}
+          />
         </form>
         <div className="mt-4 text-center">
           <Link

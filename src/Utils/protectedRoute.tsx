@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useUser } from '../Hooks/userContext.tsx'; // Import useUser from where it's defined
 

@@ -39,7 +39,6 @@ const Dashboard = () => {
     ({ data }: { data: RowData }) => {
       setChangedRows(currentChangedRows => {
         const existingRow = currentChangedRows.find(row => row.id === data.id);
-        l(existingRow, 'existingRow');
         if (existingRow) {
           return currentChangedRows.map(row =>
             row.id === data.id ? data : row

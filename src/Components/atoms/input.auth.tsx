@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface InputFieldProps {
   label: string;
   type: string;
@@ -16,7 +14,7 @@ const InputField: React.FC<InputFieldProps> = ({
   name,
   onChange,
   id,
-}) => {
+}: InputFieldProps) => {
   return (
     <div>
       <label htmlFor={id} className="block font-medium text-gray-700">

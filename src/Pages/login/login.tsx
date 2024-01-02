@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, InputField } from '../../Components/atoms';
 import { useUser } from '../../Hooks/userContext.tsx';
@@ -42,7 +42,6 @@ const LoginForm = () => {
             return data.username === username && data.password === password;
           }
         );
-        console.log(result);
         if (result) {
           const user = data.find(
             (data: { username: string; password: string }) => {
@@ -84,16 +83,17 @@ const LoginForm = () => {
             id="password"
           />
           {error && <p className="text-red-500 text-sm">{error}</p>}
-          <Button text="Login" onClick={() => {}} loading={loading} />
+          <Button
+            text="Login"
+            onClick={() => {
+              console.log('clicked');
+            }}
+            loading={loading}
+          />
         </form>
-        <div className="mt-4 text-center">
-          <Link
-            to="/signUp"
-            className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none"
-          >
-            Don't have an account? Sign Up
-          </Link>
-        </div>
+        <Link to="/signUp" className="mt-4 text-center">
+          {`Don't have an account? Sign Up`}
+        </Link>
       </div>
     </div>
   );

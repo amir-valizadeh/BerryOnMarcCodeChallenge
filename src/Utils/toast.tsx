@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 interface ToastProps {
   text: string;
@@ -6,7 +6,11 @@ interface ToastProps {
   onClose: () => void;
 }
 
-const Toast: React.FC<ToastProps> = ({ text, isVisible, onClose }) => {
+const Toast: React.FC<ToastProps> = ({
+  text,
+  isVisible,
+  onClose,
+}: ToastProps) => {
   useEffect(() => {
     if (isVisible) {
       const timer = setTimeout(() => {
